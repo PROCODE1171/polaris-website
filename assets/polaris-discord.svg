@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="discBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1a38" />
+      <stop offset="50%" stop-color="#0a1226" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <!-- Frost Cyan Gradient for Discord Body -->
+    <linearGradient id="frostDiscordGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e0f2fe" />
+      <stop offset="25%" stop-color="#67e8f9" />
+      <stop offset="70%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+
+    <!-- Core Star Gradient -->
+    <linearGradient id="crystalStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Radial Glow -->
+    <radialGradient id="discIcyGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4" />
+      <stop offset="60%" stop-color="#0284c7" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Glow Filter -->
+    <filter id="icyGlowFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Container Box with Rounded Chamfered Corners -->
+  <rect x="10" y="10" width="220" height="220" rx="44" fill="url(#discBgGrad)" stroke="#38bdf8" stroke-width="2.5" stroke-opacity="0.4" />
+  
+  <!-- Subtle Inner Border Grid Accent -->
+  <rect x="18" y="18" width="204" height="204" rx="36" fill="none" stroke="#00f0ff" stroke-width="1" stroke-opacity="0.15" stroke-dasharray="8 8" />
+
+  <!-- Center Ambient Radial Glow -->
+  <circle cx="120" cy="120" r="85" fill="url(#discIcyGlow)" />
+
+  <!-- Discord Body Geometry -->
+  <g filter="url(#icyGlowFilter)" transform="translate(36, 48)">
+    <!-- Main Discord Silhouette (scaled to 168x120 approx) -->
+    <path d="M142.8 17.6C131.9 12.6 120.3 8.9 108.2 6.8C106.7 9.5 104.9 13.3 103.7 16.2C90.9 14.3 78.1 14.3 65.5 16.2C64.3 13.3 62.5 9.5 61 6.8C48.8 8.9 37.3 12.6 26.3 17.6C4.4 50.1 -1.5 81.7 1.4 112.9C15.9 123.6 29.9 130.1 43.7 134.4C47.1 129.7 50.2 124.7 52.8 119.3C47.8 117.4 43 115 38.5 112.1C39.7 111.2 40.9 110.3 42 109.4C69.3 122 99.8 122 126.8 109.4C128 110.3 129.2 111.2 130.4 112.1C125.8 115 121 117.4 116 119.3C118.6 124.7 121.7 129.7 125.1 134.4C138.9 130.1 153 123.6 167.5 112.9C171.1 76.6 161.7 45.4 142.8 17.6ZM56.3 92.4C47.9 92.4 41 84.7 41 75.3C41 65.9 47.7 58.2 56.3 58.2C64.9 58.2 71.8 65.9 71.6 75.3C71.6 84.7 64.9 92.4 56.3 92.4ZM112.7 92.4C104.3 92.4 97.4 84.7 97.4 75.3C97.4 65.9 104.1 58.2 112.7 58.2C121.3 58.2 128.2 65.9 128 75.3C128 84.7 121.3 92.4 112.7 92.4Z" 
+          fill="url(#frostDiscordGrad)" />
+
+    <!-- Polaris 8-Pointed Star Overlay between Discord eyes/forehead -->
+    <!-- North/South/East/West spikes -->
+    <polygon points="84.5,22 88,40 84.5,45 81,40" fill="url(#crystalStarGrad)" />
+    <polygon points="84.5,68 88,50 84.5,45 81,50" fill="url(#crystalStarGrad)" />
+    <polygon points="107,45 89,48.5 84.5,45 89,41.5" fill="url(#crystalStarGrad)" />
+    <polygon points="62,45 80,48.5 84.5,45 80,41.5" fill="url(#crystalStarGrad)" />
+
+    <!-- Diagonal Shards -->
+    <polygon points="84.5,45 98,31 84.5,40" fill="#ffffff" opacity="0.9" />
+    <polygon points="84.5,45 98,59 89,45" fill="#38bdf8" opacity="0.9" />
+    <polygon points="84.5,45 71,59 84.5,50" fill="#ffffff" opacity="0.9" />
+    <polygon points="84.5,45 71,31 80,45" fill="#38bdf8" opacity="0.9" />
+
+    <!-- Radiant Star Center -->
+    <circle cx="84.5" cy="45" r="3.5" fill="#ffffff" />
+    <circle cx="84.5" cy="45" r="1.5" fill="#00f0ff" />
+  </g>
+
+  <!-- Corner Tech Accent Decals -->
+  <path d="M 28 42 L 28 28 L 42 28" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+  <path d="M 198 28 L 212 28 L 212 42" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+  <path d="M 28 198 L 28 212 L 42 212" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+  <path d="M 212 198 L 212 212 L 198 212" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.6" />
+  
+  <!-- Subtle Banner Label at Bottom -->
+  <text x="120" y="206" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="800" letter-spacing="3" text-anchor="middle" fill="#67e8f9" opacity="0.9">POLARIS DISCORD</text>
+</svg>
