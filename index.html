@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POLARIS // Gaming, Mods, Optimizations & Configs Hub</title>
+  <meta name="description" content="Polaris is the premier hub for Minecraft mods, FPS resource packs, server plugins, anticheat configs, low-latency Windows optimizations, and competitive configs.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Ambient Cosmic Canvas & Glow Background -->
+  <canvas id="starCanvas"></canvas>
+  <div class="ambient-glow-top"></div>
+  <div class="ambient-glow-bottom"></div>
+
+  <div class="content-wrapper">
+    <!-- ====================================================================
+         ✦ HEADER & NAVBAR
+         ==================================================================== -->
+    <header class="polaris-navbar">
+      <div class="container nav-container">
+        <a href="#home" class="brand-link" aria-label="Polaris Home">
+          <img src="assets/polaris-logo.svg" alt="POLARIS Logo" class="brand-logo-img">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#downloads" class="nav-link">Downloads</a></li>
+            <li><a href="#features" class="nav-link">Features</a></li>
+            <li><a href="#discord-section" class="nav-link">Community</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right Side Nav Actions -->
+        <div class="nav-right">
+          <button type="button" class="discord-btn-nav" id="discordNavBtn" aria-label="Open Discord Community">
+            <span class="online-dot" aria-hidden="true"></span>
+            <img src="assets/polaris-discord.svg" alt="" class="discord-nav-icon">
+            <span>Discord</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Mobile Menu" aria-expanded="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Drawer -->
+      <div class="mobile-nav-drawer" id="mobileNav">
+        <ul class="mobile-nav-list">
+          <li><a href="#home" class="mobile-nav-link">✦ Home</a></li>
+          <li><a href="#downloads" class="mobile-nav-link">📦 Downloads Hub</a></li>
+          <li><a href="#features" class="mobile-nav-link">⚡ Performance Features</a></li>
+          <li><a href="#discord-section" class="mobile-nav-link">💠 Discord Community</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         🌌 HERO SECTION
+         ==================================================================== -->
+    <main>
+      <section class="hero-section" id="home">
+        <div class="container">
+          <div class="hero-badge-pill">
+            <span>✦</span>
+            <span>NEXT-GEN PERFORMANCE & GAMING REPOSITORY</span>
+          </div>
+
+          <h1 class="hero-title">
+            The Guiding Light in <br>
+            <span class="gradient-text">Gaming & Optimization</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Curated Minecraft performance mods, competitive PvP resource packs, server plugins, anticheat configs, low-latency Windows scripts, and game launchers.
+          </p>
+
+          <!-- Hero Quick Stats -->
+          <div class="hero-stats-row">
+            <div class="stat-box">
+              <span class="stat-num" id="statTotalDownloads">380k+</span>
+              <span class="stat-label">Total Downloads</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num" id="statTotalMods">16</span>
+              <span class="stat-label">Verified Packages</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num" id="statDiscordOnline">4,912</span>
+              <span class="stat-label">Online In Discord</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num" id="statDiscordMembers">18.4k</span>
+              <span class="stat-label">Community Members</span>
+            </div>
+          </div>
+
+          <!-- Connected Discord Banner Card -->
+          <div class="discord-banner-card" id="discord-section">
+            <div class="discord-banner-left">
+              <img src="assets/polaris-discord.svg" alt="Polaris Discord Emblem" class="discord-banner-emblem">
+              <div class="discord-banner-text">
+                <h3>Join the Polaris Discord Community</h3>
+                <p>Get instant updates, config requests, tech support, and connect with competitive players.</p>
+              </div>
+            </div>
+            <div class="discord-banner-actions">
+              <button type="button" class="btn-secondary" id="copyDiscordBtn">
+                Copy Invite
+              </button>
+              <button type="button" class="btn-primary" id="discordHeroBtn">
+                Join Discord
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           🔎 SEARCH, VERSION FILTERING & CATEGORY PILLS
+           ==================================================================== -->
+      <section class="downloads-section" id="downloads">
+        <div class="container">
+          <!-- Search Controls Bar -->
+          <div class="filter-search-container">
+            <div class="search-controls-row">
+              <!-- Search Input -->
+              <div class="search-input-wrapper">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="11" cy="11" r="8"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <input 
+                  type="text" 
+                  id="searchInput" 
+                  class="polaris-search-input" 
+                  placeholder="Search mods, configs, launchers, tags (e.g. 'Sodium', 'FPS', '1.8.9')..." 
+                  autocomplete="off"
+                >
+                <button type="button" class="clear-search-btn" id="clearSearchBtn" title="Clear search">✕</button>
+              </div>
+
+              <!-- Version Selector Dropdown -->
+              <div class="select-control-wrapper">
+                <select id="versionSelect" class="polaris-select" aria-label="Filter by Game Version">
+                  <option value="all">🎮 All Versions</option>
+                  <option value="1.8.9">Version 1.8.9 (PvP)</option>
+                  <option value="1.12.2">Version 1.12.2</option>
+                  <option value="1.16.5">Version 1.16.5</option>
+                  <option value="1.20.x">Version 1.20.x</option>
+                  <option value="1.21+">Version 1.21+</option>
+                  <option value="Windows 10/11">Windows 10 / 11</option>
+                  <option value="Universal">Universal / Any</option>
+                </select>
+                <span class="select-arrow">▾</span>
+              </div>
+
+              <!-- Sort Dropdown -->
+              <div class="select-control-wrapper">
+                <select id="sortSelect" class="polaris-select" aria-label="Sort Downloads">
+                  <option value="featured">★ Featured First</option>
+                  <option value="downloads">🔥 Most Downloads</option>
+                  <option value="newest">⚡ Recently Updated</option>
+                  <option value="name-asc">🔤 Name (A - Z)</option>
+                </select>
+                <span class="select-arrow">▾</span>
+              </div>
+            </div>
+
+            <!-- Category Pills Bar (7 Target Categories) -->
+            <div class="category-tabs-bar" role="tablist" aria-label="Category Selection">
+              <button type="button" class="category-btn active" data-category="all">
+                ✦ All Categories
+              </button>
+              <button type="button" class="category-btn" data-category="mods">
+                🧩 Mods
+              </button>
+              <button type="button" class="category-btn" data-category="resourcepacks">
+                🎨 Resource Packs
+              </button>
+              <button type="button" class="category-btn" data-category="plugins">
+                🔧 Plugins
+              </button>
+              <button type="button" class="category-btn" data-category="anticheats">
+                🛡️ Anticheats
+              </button>
+              <button type="button" class="category-btn" data-category="optimization">
+                ⚙️ Windows Optimization
+              </button>
+              <button type="button" class="category-btn" data-category="launchers">
+                🚀 Launchers
+              </button>
+              <button type="button" class="category-btn" data-category="configs">
+                📦 Configs
+              </button>
+            </div>
+          </div>
+
+          <!-- Results Counter & Reset Action -->
+          <div class="results-info-row">
+            <span id="resultsCount">Showing downloads...</span>
+            <button type="button" class="reset-filters-btn" id="resetFiltersBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+              Reset Filters
+            </button>
+          </div>
+
+          <!-- The Dynamic Downloads Grid -->
+          <div class="cards-grid" id="cardsGrid">
+            <!-- Cards rendered dynamically from script.js database -->
+          </div>
+
+          <!-- No Results Box -->
+          <div class="no-results-box" id="noResults">
+            <div class="no-results-icon">❄️</div>
+            <h3>No matching packages found</h3>
+            <p>Try adjusting your search keywords, version filter, or selected category.</p>
+            <button type="button" class="btn-secondary" onclick="document.getElementById('resetFiltersBtn').click()">
+              Clear All Filters
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================================================================
+           ⚡ FEATURE HIGHLIGHTS
+           ==================================================================== -->
+      <section class="container" id="features" style="margin-bottom: 5rem;">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <h2 style="font-size: 2rem; font-weight: 800; margin-bottom: 0.5rem;">Why Choose Polaris?</h2>
+          <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Engineered for competitive players, server administrators, and PC enthusiasts who demand maximum frame rates and lowest possible input lag.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+          <div style="background: var(--bg-surface); border: 1px solid var(--accent-border); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: var(--glass-blur);">
+            <div style="font-size: 2rem; margin-bottom: 1rem;">⚡</div>
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff;">Zero-Latency Tweaks</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Tested kernel and registry parameters designed to strip down Windows background DPC latency and TCP packet queuing.</p>
+          </div>
+
+          <div style="background: var(--bg-surface); border: 1px solid var(--accent-border); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: var(--glass-blur);">
+            <div style="font-size: 2rem; margin-bottom: 1rem;">🛡️</div>
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff;">100% Virus-Free & Safe</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Every file, script, and mod in the Polaris catalog is open-source verified or hash-checked for complete system security.</p>
+          </div>
+
+          <div style="background: var(--bg-surface); border: 1px solid var(--accent-border); border-radius: var(--radius-lg); padding: 1.75rem; backdrop-filter: var(--glass-blur);">
+            <div style="font-size: 2rem; margin-bottom: 1rem;">💬</div>
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem; color: #fff;">Active Community Hub</h3>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Connect directly with thousands of members, request custom configurations, and receive fast troubleshooting assistance.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         ⚓ FOOTER
+         ==================================================================== -->
+    <footer class="polaris-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <img src="assets/polaris-logo.svg" alt="Polaris Logo" style="height: 38px; width: auto; align-self: flex-start;">
+            <p class="footer-desc">
+              The premier repository for high-performance Minecraft modifications, low-latency system scripts, and competitive configs.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h4>Downloads</h4>
+            <ul class="footer-links">
+              <li><a href="#downloads" class="footer-link" onclick="document.querySelector('[data-category=mods]').click()">Mods</a></li>
+              <li><a href="#downloads" class="footer-link" onclick="document.querySelector('[data-category=resourcepacks]').click()">Resource Packs</a></li>
+              <li><a href="#downloads" class="footer-link" onclick="document.querySelector('[data-category=plugins]').click()">Plugins</a></li>
+              <li><a href="#downloads" class="footer-link" onclick="document.querySelector('[data-category=configs]').click()">Configs</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>System</h4>
+            <ul class="footer-links">
+              <li><a href="#downloads" class="footer-link" onclick="document.querySelector('[data-category=optimization]').click()">Windows Tweaks</a></li>
+              <li><a href="#downloads" class="footer-link" onclick="document.querySelector('[data-category=anticheats]').click()">Anticheats</a></li>
+              <li><a href="#downloads" class="footer-link" onclick="document.querySelector('[data-category=launchers]').click()">Launchers</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Discord</h4>
+            <ul class="footer-links">
+              <li><a href="https://discord.gg/bsj2btnC3q" target="_blank" rel="noopener" class="footer-link">Join Server</a></li>
+              <li><a href="javascript:void(0)" onclick="copyDiscordInvite()" class="footer-link">Copy Invite</a></li>
+              <li><a href="javascript:void(0)" onclick="openDiscordModal()" class="footer-link">Community Stats</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>&copy; 2026 POLARIS HUB. All rights reserved. Not affiliated with Mojang Studios or Microsoft.</span>
+          <span>Easy <code style="color: var(--accent-cyan); background: rgba(0,240,255,0.1); padding: 2px 6px; border-radius: 4px;">script.js</code> database ready for customization.</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ====================================================================
+       📱 ITEM DETAILS MODAL
+       ==================================================================== -->
+  <div class="polaris-modal" id="detailsModal" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" id="closeModalBtn" aria-label="Close modal">✕</button>
+      <div id="modalBodyContent">
+        <!-- Injected via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       💠 DISCORD COMMUNITY MODAL
+       ==================================================================== -->
+  <div class="polaris-modal" id="discordModal" role="dialog" aria-modal="true">
+    <div class="modal-dialog">
+      <button type="button" class="modal-close-btn" id="closeDiscordModalBtn" aria-label="Close modal">✕</button>
+      <div class="discord-modal-content">
+        <img src="assets/polaris-discord.svg" alt="POLARIS Discord Emblem" class="discord-modal-logo">
+        <h2 class="discord-modal-title">Join POLARIS Discord</h2>
+        <p class="discord-modal-desc">
+          Step into our cosmic community. Share configs, request optimizations, access private testing builds, and get live help.
+        </p>
+
+        <div class="discord-stats-pill">
+          <div class="discord-stat-sub">
+            <span class="online-dot"></span>
+            <span>4,912 Online</span>
+          </div>
+          <div class="discord-stat-sub">
+            <span>👥</span>
+            <span>18,420 Members</span>
+          </div>
+        </div>
+
+        <div class="discord-invite-box">
+          <span class="discord-invite-code">discord.gg/bsj2btnC3q</span>
+          <button type="button" class="btn-secondary" onclick="copyDiscordInvite()">
+            Copy Link
+          </button>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; justify-content: center;">
+          <a href="https://discord.gg/bsj2btnC3q" target="_blank" rel="noopener noreferrer" class="btn-primary" style="text-decoration: none; padding: 0.75rem 2rem; font-size: 1rem;">
+            Launch Discord
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       💬 FLOATING DISCORD TRIGGER BUTTON
+       ==================================================================== -->
+  <button type="button" class="floating-discord-btn" id="discordFloatingBtn" aria-label="Open Discord Widget">
+    <img src="assets/polaris-discord.svg" alt="" class="floating-discord-logo">
+    <span>Discord Hub</span>
+  </button>
+
+  <!-- ====================================================================
+       🍞 TOAST CONTAINER
+       ==================================================================== -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Main JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
